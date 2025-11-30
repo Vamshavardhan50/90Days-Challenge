@@ -1,0 +1,81 @@
+# Java Data Types Notes
+
+Data types in Java specify the size and type of values that can be stored in an identifier. Java is a statically-typed language, meaning all variables must be declared before they can be used.
+
+There are two main categories of data types in Java:
+
+1.  **Primitive Data Types**
+2.  **Non-Primitive (Reference) Data Types**
+
+---
+
+## 1. Primitive Data Types
+These are the building blocks of data manipulation in Java. There are 8 primitive data types:
+
+### A. Numeric Types
+
+#### Integral Types (Whole Numbers)
+1.  **byte**
+    *   Size: 1 byte (8 bits)
+    *   Range: -128 to 127
+    *   Default Value: 0
+    *   Use: Saving memory in large arrays.
+
+2.  **short**
+    *   Size: 2 bytes (16 bits)
+    *   Range: -32,768 to 32,767
+    *   Default Value: 0
+    *   Use: Also for saving memory, slightly larger range than byte.
+
+3.  **int** (Most commonly used)
+    *   Size: 4 bytes (32 bits)
+    *   Range: -2^31 to 2^31-1 (approx -2 billion to 2 billion)
+    *   Default Value: 0
+
+4.  **long**
+    *   Size: 8 bytes (64 bits)
+    *   Range: -2^63 to 2^63-1
+    *   Default Value: 0L
+    *   Use: When a wider range than `int` is needed. Note the 'L' suffix (e.g., `long a = 100000L;`).
+
+#### Floating-Point Types (Decimal Numbers)
+5.  **float**
+    *   Size: 4 bytes (32 bits)
+    *   Range: Sufficient for storing 6 to 7 decimal digits
+    *   Default Value: 0.0f
+    *   Use: Saving memory in large arrays of floating point numbers. Note the 'f' suffix (e.g., `float f = 5.75f;`).
+
+6.  **double** (Default for decimals)
+    *   Size: 8 bytes (64 bits)
+    *   Range: Sufficient for storing 15 decimal digits
+    *   Default Value: 0.0d
+
+### B. Character Type
+7.  **char**
+    *   Size: 2 bytes (16 bits)
+    *   Range: 0 to 65,535 (unsigned)
+    *   Default Value: '\u0000' (null character)
+    *   Use: Stores a single character/letter or ASCII values (e.g., `char letter = 'A';`).
+
+### C. Boolean Type
+8.  **boolean**
+    *   Size: Virtual Machine dependent (usually 1 bit of information, but size isn't precisely defined)
+    *   Values: `true` or `false`
+    *   Default Value: `false`
+    *   Use: Conditional logic and flags.
+
+---
+
+## 2. Non-Primitive (Reference) Data Types
+These refer to objects and are created by the programmer (except for String). They store the memory address (reference) of the object, not the value itself.
+
+*   **String**: A sequence of characters (e.g., `String text = "Hello";`). In Java, Strings are objects, not primitives.
+*   **Arrays**: A collection of similar types of data (e.g., `int[] numbers = {1, 2, 3};`).
+*   **Classes**: User-defined blueprints for objects.
+*   **Interfaces**: Abstract types used to specify a behavior that classes must implement.
+
+### Key Differences between Primitive and Non-Primitive:
+*   Primitives are predefined in Java; Non-primitives are created by the programmer (except String).
+*   Non-primitives can call methods to perform operations; Primitives cannot.
+*   Primitives always have a value; Non-primitives can be `null`.
+*   Primitives start with a lowercase letter; Non-primitives typically start with an uppercase letter.
