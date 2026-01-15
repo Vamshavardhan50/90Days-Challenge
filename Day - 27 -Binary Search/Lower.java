@@ -3,7 +3,7 @@ public class Lower {
     int[] arr = { 2, 3, 7, 10, 11, 11, 25 };
     int x = 2;
 
-    int low = 0, high = arr.length;
+    int low = 0, high = arr.length - 1;
 
     while (low <= high) {
       int mid = low + (high - low) / 2;
