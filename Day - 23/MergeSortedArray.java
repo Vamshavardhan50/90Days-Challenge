@@ -3,24 +3,31 @@ import java.util.Arrays;
 public class MergeSortedArray {
   public static void main(String[] args) {
 
-    int[] num1 = { 1, 2, 3, 1, 2, 3 };
-    int[] num2 = { 2, 5, 6, 1, 2, 3 };
+    int kth = 5;
+    int[] nums1 = { 2, 3, 6, 7, 9 };
+    int m = 5;
 
-    // create a new array to hold both arrays
-    int[] result = new int[num1.length + num2.length];
+    int[] nums2 = { 1, 4, 8, 10 };
+    int n = 3;
 
-    int index = 0;
+    int i = m - 1; // last valid element in nums1
+    int j = n - 1; // last element in nums2
+    int k = m + n - 1; // last index of nums1
 
-    // copy num1 into result
-    for (int i = 0; i < num1.length; i++) {
-      result[index++] = num1[i];
+    // Merge from the back
+    while (i >= 0 && j >= 0) {
+      if (nums1[i] > nums2[j]) {
+        nums1[k--] = nums1[i--];
+      } else {
+        nums1[k--] = nums2[j--];
+      }
     }
 
-    // copy num2 into result
-    for (int i = 0; i < num2.length; i++) {
-      result[index++] = num2[i];
+    // Copy remaining nums2 elements
+    while (j >= 0) {
+      nums1[k--] = nums2[j--];
     }
-    Arrays.sort(result);
-    System.out.println(Arrays.toString(result));
+
+    System.out.println(Arrays.toString(nums1));
   }
 }
