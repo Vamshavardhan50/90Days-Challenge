@@ -29,3 +29,54 @@
 // System.out.println(maxRowIndex);
 // }
 // }
+
+//The Optimal Approach is simple 
+// lets think that each row in the matrix/grid is the array every array we can apply BS and find the lowerbound
+
+// thought of optimal:
+// for loop  -- > it act as the row to move 
+//   BS --> it will search number of ones in a row
+
+
+public class MaximumNumberOfOnes {
+  public static void main(String[] args) {
+    int rows = 4, cols = 4;
+    int[][] arr = {
+        { 0, 1, 1, 1 },
+        { 0, 0, 1, 1 },
+        { 1, 1, 1, 1 },
+        { 0, 0, 0, 0 }
+    };
+
+    int maxOnes = 0;
+    int rowIndex = -1;
+
+    for (int i = 0; i < rows; i++) {
+      int low = 0, high = cols - 1;
+      int firstOneIndex = -1;
+
+      // Binary search to find first occurrence of 1
+      while (low <= high) {
+        int mid = low + (high - low) / 2;
+
+        if (arr[i][mid] == 1) {
+          firstOneIndex = mid;
+          high = mid - 1; // move left
+        } else {
+          low = mid + 1; // move right
+        }
+      }
+
+      if (firstOneIndex != -1) {
+        int onesCount = cols - firstOneIndex;
+
+        if (onesCount > maxOnes) {
+          maxOnes = onesCount;
+          rowIndex = i;
+        }
+      }
+    }
+
+    System.out.println("Row with maximum 1s: " + rowIndex);
+  }
+}
