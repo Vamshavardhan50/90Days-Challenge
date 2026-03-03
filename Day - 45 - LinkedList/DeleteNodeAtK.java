@@ -34,7 +34,7 @@ public class DeleteNodeAtK {
     Node prev = null;
     while (temp != null) {
       if (temp.data == k) {
-        prev.next = temp  .next;
+        prev.next = temp.next;
         temp = null;
         break;
       }
