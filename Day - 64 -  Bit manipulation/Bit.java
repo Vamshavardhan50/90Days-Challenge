@@ -1,20 +1,25 @@
 public class Bit {
   public static void main(String[] args) {
-    // int n = 23;
-    // String ans = "";
+    int n = 43261596;
 
-    // while (n != 0) {
-    // if (n % 2 == 1) {
-    // ans += '1';
-    // } else {
-    // ans += '0';
-    // }
-    // n = n / 2;
-    // }
-    // System.out.println(ans);
-    // String reversed = new StringBuilder(ans).reverse().toString();
-    // System.out.println(reversed);
-    // // binary to decimal;
+    String ans = "";
+
+    while (n != 0) {
+      if (n % 2 == 1) {
+        ans += '1';
+      } else {
+        ans += '0';
+      }
+      n = n / 2;
+    }
+
+    String binary32 = String.format("%32s", Integer.toBinaryString(n)).replace(' ', '0');
+    System.out.println(binary32);
+
+    System.out.println(ans);
+    String reversed = new StringBuilder(ans).reverse().toString();
+    System.out.println(reversed);
+    // binary to decimal;
 
     // int result = 0;
     // int indx = 0;
@@ -29,11 +34,6 @@ public class Bit {
     // }
     // System.out.println(result);
 
-    int a = 5, b = 6;
-    a = a ^ b;
-    b = a ^ b;
-    a = a ^ b;
-    System.out.println(a + " " + b);
   }
 
 }
