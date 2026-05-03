@@ -54,4 +54,3 @@ public class Stacks1 {
     System.out.println(st.isFull());
   }
 }
-
