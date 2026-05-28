@@ -3,7 +3,10 @@ import java.util.Set;
 
 public class SpecialCharactersI {
   public static void main(String[] args) {
-    String word = "abBCab";
+    String word = "AbBCab";
+
+    boolean LowerCase = word.contains("c");
+    boolean UpperCase = word.contains("C");
     Set<Character> lower = new HashSet<>();
     Set<Character> upper = new HashSet<>();
 
@@ -22,6 +25,10 @@ public class SpecialCharactersI {
         count++;
       }
     }
-    System.out.println(count);
+    if (LowerCase && UpperCase) {
+      System.out.println(count);
+    } else {
+      System.out.println(0);
+    }
   }
 }
