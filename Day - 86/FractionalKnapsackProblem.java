@@ -3,7 +3,7 @@ import java.util.TreeMap;
 
 public class FractionalKnapsackProblem{
     public static void main(String[] args) {
-        int[] val ={8 2 10 1 9 7 2 6 4 9};
+        int[] val ={60, 100};
         int[] wt = {10, 20};
         int capacity = 50;
 
